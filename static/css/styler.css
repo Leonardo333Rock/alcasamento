@@ -1,0 +1,27 @@
+.topo{
+    background-color: #b02c0c;
+    height: 300px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.flex{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.flex_header{
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
+    flex-direction: column;
+
+}
+
+.div_presentes{
+    flex-wrap:wrap ;
+}
+
+.card{
+    margin: 5px;
+}

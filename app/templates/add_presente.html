@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'add' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Presente</label>
+            <input class="form-control" type="text" id="formFile" name="presente" required>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Valor</label>
+            <input class="form-control" type="text" id="formFile" name="valor" required>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Qantidade</label>
+            <input class="form-control" type="text" id="formFile" name="quantidade" required>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Descriçao</label>
+            <input class="form-control" type="text" id="formFile" name="descricao" required>
+        </div>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
+</div>
+
+{% endblock %}
