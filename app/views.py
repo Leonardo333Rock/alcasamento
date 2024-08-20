@@ -9,7 +9,7 @@ def Lista_de_presentes(request):
     presente = Presente.objects.all()
     for x in presente:
         print(x.valor)
-    return render(request,'lista_de_presentes.html',{presente:'presente'})
+    return render(request,'lista_de_presentes.html',{'presente':presente})
 
 def Confimacao(request):
     return HttpResponse('confirmaçao')
