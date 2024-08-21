@@ -9,6 +9,8 @@ urlpatterns = [
     path('cerimonia',views.Cerimonia, name='cerimonia'),
     path('local',views.Local, name='Local'),
     path('add',views.Add, name='add'),
+    path('add_convidado',views.Add_convidado, name='add_convidado'),
+
 
 
 ]

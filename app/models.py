@@ -8,3 +8,9 @@ class Presente(models.Model):
     link_img = models.TextField(max_length=255, default='')
     quantidades = models.IntegerField(default=0)
 
+
+class Convidado(models.Model):
+    id = models.AutoField(primary_key=True)
+    nome = models.TextField(max_length=255)
+    acompanhantes = models.IntegerField()
+    codigo = models.IntegerField()

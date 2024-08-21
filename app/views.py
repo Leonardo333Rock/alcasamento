@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from . models import Presente
+from . models import Presente, Convidado
+import random
+from . ultilizar import Sortear
 
 def Home(request):
     return render(request,'home.html')
@@ -12,7 +14,7 @@ def Lista_de_presentes(request):
     return render(request,'lista_de_presentes.html',{'presente':presente})
 
 def Confimacao(request):
-    return HttpResponse('confirmaçao')
+    return render(request, 'confirmacao.html')
 
 def Noivos(request):
     return HttpResponse('noivos')
@@ -36,3 +38,19 @@ def Add(request):
         presente.link_img = f"../../static/img/{presente.presente}{len(id)+1}.jpg"
         presente.save()
         return redirect('add')
+
+def Add_convidado(request):
+    if request.method == 'GET':
+        return render(request, 'add_convidado.html')
+    else:
+        
+        convidado = Convidado()
+        codigo = Convidado.objects.all()
+        convidado.nome = request.POST.get("nome")
+        convidado.acompanhantes = int(request.POST.get("qt_acompanhante"))
+
+        numero  = Sortear(codigo)
+
+        convidado.codigo = numero
+        convidado.save()
+        return redirect('add_convidado')
