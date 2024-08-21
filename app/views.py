@@ -14,7 +14,19 @@ def Lista_de_presentes(request):
     return render(request,'lista_de_presentes.html',{'presente':presente})
 
 def Confimacao(request):
-    return render(request, 'confirmacao.html')
+    if request.method == 'GET':
+        return render(request, 'confirmacao.html')
+    convite = str(request.POST.get('convite'))
+
+    try:
+        convidado = Convidado.objects.get(codigo=convite)
+
+        repeticoes = [i for i in range(convidado.acompanhantes)]
+        return render(request, 'acompanhantes.html',{'convidado':repeticoes,'conv':convidado.nome})
+    except:
+        return HttpResponse("<h1>Convinte nao Existe!</h1>")
+def Acompanhantes(request):
+    return HttpResponse('OLA')
 
 def Noivos(request):
     return HttpResponse('noivos')
