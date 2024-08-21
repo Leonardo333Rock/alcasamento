@@ -66,3 +66,9 @@ def Add_convidado(request):
         convidado.codigo = numero
         convidado.save()
         return redirect('add_convidado')
+
+
+def Lista_de_convidados(request):
+    convidado = Convidado.objects.all()
+
+    return render(request, 'lista_de_convidados.html',{'convidado':convidado})

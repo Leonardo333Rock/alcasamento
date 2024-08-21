@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% for x in convidado %}
+        <h4>{{x.nome}}</h4> <p>{{x.acompanhantes}} acompanhantes</p>
+    {% endfor %}
+</div>
+{% endblock %}
