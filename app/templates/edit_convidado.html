@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="container">
+    <form method="POST" action="{% url 'edit' %}">
+        {% csrf_token %}
+        <div class="form-group">
+        <label for="formGroupExampleInput">Nome</label>
+        <input type="text" class="form-control" name="nome" id="id_nome" value="{{convidado.nome}}" placeholder="Seu Nome">
+        </div>
+        <div class="form-group">
+        <label for="formGroupExampleInput2">Quantidade de acompanhantes</label>
+        <input type="text" class="form-control" value="{{convidado.acompanhantes}}" name="qt_acompanhante" id="acompanhante">
+        <input type="text" class="form-control" hidden value="{{convidado.id}}" name="id" id="id">
+        
+        </div>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
+</div>
+{% endblock %}

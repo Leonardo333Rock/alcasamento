@@ -3,8 +3,35 @@
 {% block content %}
 
 <div class="container">
-    {% for x in convidado %}
-        <h4>{{x.nome}}</h4> <p>{{x.acompanhantes}} acompanhantes</p>
-    {% endfor %}
+
+    <table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Acompanhantes</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Editar</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        {% for x in convidado %}
+          <tr>
+            <th scope="row">{{x.id}}</th>
+            <td>{{x.nome}}</td>
+            <td>{{x.acompanhantes}}</td>
+            <td>{{x.codigo}}</td>
+            <td><a href="editar/{{x.id}}" class="btn btn-success">Editar</a></td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <th scope="row">Total</th>
+            <td colspan="2">Convites {{quantidade}}</td>
+            <td>Acompanhantes - {{ac}}</td>
+            <td>Convidados - {{total}}</td>
+          </tr>
+        </tbody>
+      </table>
 </div>
 {% endblock %}

@@ -14,3 +14,6 @@ class Convidado(models.Model):
     nome = models.TextField(max_length=255)
     acompanhantes = models.IntegerField()
     codigo = models.IntegerField()
+
+    class Meta:
+        ordering = ['acompanhantes']

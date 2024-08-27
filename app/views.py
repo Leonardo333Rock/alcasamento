@@ -70,5 +70,25 @@ def Add_convidado(request):
 
 def Lista_de_convidados(request):
     convidado = Convidado.objects.all()
+    quantidade = len(convidado)
+    ac = 0
+    for x in convidado:
+        ac += x.acompanhantes
 
-    return render(request, 'lista_de_convidados.html',{'convidado':convidado})
+    total = quantidade + ac
+    return render(request, 'lista_de_convidados.html',{'convidado':convidado,'quantidade':quantidade ,"ac":ac , 'total':total})
+
+
+def Edit_convidado(request,id):
+    if request.method == 'GET':
+        convi = Convidado.objects.get(id=id)
+        return render(request, 'edit_convidado.html',{'convidado':convi})
+
+def Edit(request):
+        if request.method == "POST":
+            id = request.POST.get("id")
+            convidado = Convidado.objects.get(id=id)
+            convidado.nome = request.POST.get("nome")
+            convidado.acompanhantes = int(request.POST.get("qt_acompanhante"))
+            convidado.save()
+            return redirect('add_convidado')

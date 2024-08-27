@@ -11,7 +11,10 @@ urlpatterns = [
     path('add',views.Add, name='add'),
     path('add_convidado',views.Add_convidado, name='add_convidado'),
     path('acompanhantes',views.Acompanhantes,name='acompanhantes'),
-    path('lista_de_convidados',views.Lista_de_convidados,name="lista_de_convidados")
+    path('lista_de_convidados',views.Lista_de_convidados,name="lista_de_convidados"),
+    path('editar/<int:id>',views.Edit_convidado,name='edit_convidado'),
+    path('edit',views.Edit,name='edit')
+
 
 
 
