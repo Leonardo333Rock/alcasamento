@@ -20,7 +20,7 @@ def Confimacao(request):
 
     try:
         convidado = Convidado.objects.get(codigo=convite)
-
+        
         repeticoes = [i for i in range(convidado.acompanhantes)]
         return render(request, 'acompanhantes.html',{'convidado':repeticoes,'conv':convidado.nome})
     except:
