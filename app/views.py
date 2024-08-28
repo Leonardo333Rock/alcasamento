@@ -92,3 +92,27 @@ def Edit(request):
             convidado.acompanhantes = int(request.POST.get("qt_acompanhante"))
             convidado.save()
             return redirect('add_convidado')
+
+
+def Lista_adm(request):
+    presente = Presente.objects.all()
+    return render(request,'lista_de_presentes_adm.html',{'presente':presente})
+
+
+def Editar_presente(request,id):
+    presente = Presente.objects.get(id=id)
+    return render(request,'editar_presente.html',{'presente':presente})
+
+def Editar_p(request):
+        if request.method == "POST":
+            id = request.POST.get("id")
+            presente = Presente.objects.get(id=id)
+            presente.presente = request.POST.get("presente")
+            presente.quantidades = request.POST.get('quantidade')
+            presente.descricao = request.POST.get("descricao").upper()
+            presente.save()
+            return redirect('lista_de_presentes')
+
+
+def Adm(request):
+    return render(request,'adm.html')

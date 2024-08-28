@@ -13,7 +13,11 @@ urlpatterns = [
     path('acompanhantes',views.Acompanhantes,name='acompanhantes'),
     path('lista_de_convidados',views.Lista_de_convidados,name="lista_de_convidados"),
     path('editar/<int:id>',views.Edit_convidado,name='edit_convidado'),
-    path('edit',views.Edit,name='edit')
+    path('edit',views.Edit,name='edit'),
+    path('lista_adm',views.Lista_adm,name='lista_adm'),
+    path('editar_presente/<int:id>',views.Editar_presente,name='editar_presente'),
+    path('editar_p',views.Editar_p,name='editar_p'),
+    path('adm',views.Adm,name='adm'),
 
 
 

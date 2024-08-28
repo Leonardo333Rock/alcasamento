@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'editar_p' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Presente</label>
+            <input class="form-control" type="text" id="formFile" value="{{presente.presente}}" name="presente" required>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Qantidade</label>
+            <input class="form-control" type="text" id="formFile" value="{{presente.quantidades}}" name="quantidade" required>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Descriçao</label>
+            <input class="form-control" type="text" id="formFile" value="{{presente.descricao}}" name="descricao" required>
+        </div>
+        <input value="{{presente.id}}" name='id' hidden type="text">
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
+</div>
+
+{% endblock %}
