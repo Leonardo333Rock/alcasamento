@@ -18,6 +18,8 @@ urlpatterns = [
     path('editar_presente/<int:id>',views.Editar_presente,name='editar_presente'),
     path('editar_p',views.Editar_p,name='editar_p'),
     path('adm',views.Adm,name='adm'),
+    path('confirmado',views.Confirmado,name='confirmado'),
+
 
 
 

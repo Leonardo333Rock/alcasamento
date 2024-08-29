@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="{% url 'confirmacao' %}" method="POST">
+        <form action="{% url 'confirmado' %}" method="POST">
             {% csrf_token %}
             <div class="form-group">
                 <h2>{{conv}}</h2>

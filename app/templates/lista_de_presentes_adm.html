@@ -2,8 +2,9 @@
 
 {% block content %}
 
-{% for x in presente %}
+
   <div class="container flex div_presentes">
+    {% for x in presente %}
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="{{x.link_img}}" alt="Card image cap">
       <div class="card-body">
@@ -11,9 +12,9 @@
         <p class="card-text">{{x.descricao}}</p>
         <a href="editar_presente/{{x.id}}" class="btn btn-primary">Editar</a>
         <p class="card-text">Restantes {{x.quantidades}}</p>
-
       </div>
     </div>
+    {% endfor %}
   </div>
-{% endfor %}
+
 {% endblock %}

@@ -25,6 +25,12 @@ def Confimacao(request):
         return render(request, 'acompanhantes.html',{'convidado':repeticoes,'conv':convidado.nome})
     except:
         return HttpResponse("<h1>Convinte nao Existe!</h1>")
+
+
+
+def Confirmado(request):
+    if request.method == 'POST':
+        return HttpResponse('confirmado')
 def Acompanhantes(request):
     return HttpResponse('OLA')
 
@@ -91,7 +97,7 @@ def Edit(request):
             convidado.nome = request.POST.get("nome")
             convidado.acompanhantes = int(request.POST.get("qt_acompanhante"))
             convidado.save()
-            return redirect('add_convidado')
+            return redirect('lista_de_convidados')
 
 
 def Lista_adm(request):
