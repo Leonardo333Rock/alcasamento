@@ -17,6 +17,7 @@
             <div class="form-group">
                 <h2>{{conv}}</h2>
                 <input type="text" hidden value="{{conv}}" name="conv">
+                <input type="text" value="{{convite}}" hidden name="convite">
                 {% for x in convidado %}
                     <label for="formGroupExampleInput">Convidado {{x}}</label>
                     <input type="text" class="form-control" name="{{x}}" id="formGroupExampleInput" placeholder="Convidado">

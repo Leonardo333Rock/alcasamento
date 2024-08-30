@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from . models import Presente, Convidado
+from . models import Presente, Convidado, Convidados_confirmados
 import random
 from . ultilizar import Sortear
 
@@ -21,7 +21,11 @@ def Confimacao(request):
     try:
         convidado = Convidado.objects.get(codigo=convite)
         repeticoes = [i for i in range(convidado.acompanhantes)]
-        return render(request, 'acompanhantes.html',{'convidado':repeticoes,'conv':convidado.nome})
+        if convidado.confirmaçao == 'aberto':
+            return render(request, 'acompanhantes.html',{'convite':convite,'convidado':repeticoes,'conv':convidado.nome})
+        else:
+            return HttpResponse("<h1>Convinte Ja confirmado</h1>")
+
     except:
         return HttpResponse("<h1>Convinte nao Existe!</h1>")
 
@@ -29,16 +33,23 @@ def Confimacao(request):
 
 def Confirmado(request):
     if request.method == 'POST':
+        conv_confirmado = Convidados_confirmados()
         conv = request.POST.get('conv')
+        convite = request.POST.get('convite')
         x = 0
-        ac = [conv]
+        ac = conv
         while x < 3:
             ac0 = request.POST.get(str(x))
-            if ac0 == None:
+            if ac0 == None or ac0 == "":
                 break
-            ac.append(ac0)
+            ac += f'-{ac0}'
             x+=1
-        print(ac)
+        
+        conv_confirmado.db_convidados = ac
+        conv_confirmado.save()
+        convidado = Convidado.objects.get(codigo=convite)
+        convidado.confirmaçao = 'fechado'
+        convidado.save()
         return HttpResponse(f'confirmado')
 
 
@@ -132,4 +143,13 @@ def Editar_p(request):
 
 
 def Adm(request):
+    
+    conf =  Convidados_confirmados.objects.all()
+
+    for x in conf:
+        arr = x.db_convidados.split("-")
     return render(request,'adm.html')
+
+
+
+

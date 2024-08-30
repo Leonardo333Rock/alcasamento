@@ -19,3 +19,8 @@ class Convidado(models.Model):
 
     class Meta:
         ordering = ['acompanhantes']
+
+
+class Convidados_confirmados(models.Model):
+    id = models.AutoField(primary_key=True)
+    db_convidados = models.TextField(max_length=255)
