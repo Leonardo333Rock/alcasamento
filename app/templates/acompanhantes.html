@@ -16,9 +16,10 @@
             {% csrf_token %}
             <div class="form-group">
                 <h2>{{conv}}</h2>
+                <input type="text" hidden value="{{conv}}" name="conv">
                 {% for x in convidado %}
                     <label for="formGroupExampleInput">Convidado {{x}}</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" name="convite" placeholder="Convidado">
+                    <input type="text" class="form-control" name="{{x}}" id="formGroupExampleInput" placeholder="Convidado">
                 {% endfor %}
                     <button type="submit" class="btn btn-success">Confirmar</button>
             </div>

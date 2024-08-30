@@ -20,7 +20,6 @@ def Confimacao(request):
 
     try:
         convidado = Convidado.objects.get(codigo=convite)
-        
         repeticoes = [i for i in range(convidado.acompanhantes)]
         return render(request, 'acompanhantes.html',{'convidado':repeticoes,'conv':convidado.nome})
     except:
@@ -30,7 +29,19 @@ def Confimacao(request):
 
 def Confirmado(request):
     if request.method == 'POST':
-        return HttpResponse('confirmado')
+        conv = request.POST.get('conv')
+        x = 0
+        ac = [conv]
+        while x < 3:
+            ac0 = request.POST.get(str(x))
+            if ac0 == None:
+                break
+            ac.append(ac0)
+            x+=1
+        print(ac)
+        return HttpResponse(f'confirmado')
+
+
 def Acompanhantes(request):
     return HttpResponse('OLA')
 
