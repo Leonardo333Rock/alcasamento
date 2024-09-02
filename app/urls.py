@@ -19,6 +19,9 @@ urlpatterns = [
     path('editar_p',views.Editar_p,name='editar_p'),
     path('adm',views.Adm,name='adm'),
     path('confirmado',views.Confirmado,name='confirmado'),
+    path('presentear/<int:id>',views.Presentear,name='presentear'),
+    path('presente_escolhido',views.Presente_escolhido,name='presente_escolhido'),
+
 
 
 

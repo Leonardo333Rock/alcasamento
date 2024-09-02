@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'presente_escolhido' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Presente</label>
+            <input class="form-control" type="text" disabled  value="{{presente.presente}}" id="formFile">
+            <input class="form-control" type="text" hidden value="{{presente.presente}}" id="formFile" name="presente" required>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Seu Nome</label>
+            <input class="form-control" type="text" id="formFile" name="nome" required>
+        </div>
+        <div class="mb-3">
+            <label for="formText" class="form-label color-label label_text_imput">Numero do convite</label>
+            <input class="form-control" type="text" id="formFile" name="nomero_do_convite" required>
+        </div>
+        <input type="text" value="{{presente.id}}" hidden name="id">
+        <button type="submit" class="btn btn-success">Pesentear ❤️</button>
+    </form>
+</div>
+{% endblock %}

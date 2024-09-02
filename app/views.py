@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from . models import Presente, Convidado, Convidados_confirmados
+from . models import Presente, Convidado, Convidados_confirmados, Presentes_ganho
 import random
 from . ultilizar import Sortear
 
@@ -13,6 +13,34 @@ def Lista_de_presentes(request):
         print(x.valor)
     return render(request,'lista_de_presentes.html',{'presente':presente})
 
+def Presentear(request,id):
+    presente = Presente.objects.get(id=id)
+    return render(request, 'presentear.html',{'presente': presente})
+
+def Presente_escolhido(request):
+    try:
+        nomero_do_convite = request.POST.get('nomero_do_convite')
+        print(nomero_do_convite)
+        convidado = Convidado.objects.get(codigo=int(nomero_do_convite))
+        print(nomero_do_convite)
+        id = request.POST.get('id')
+        presente = Presente.objects.get(id=id)
+        pg = Presentes_ganho()
+        qt = presente.quantidades - 1
+
+        pg.nome_presente = request.POST.get('presente')
+        pg.nome = request.POST.get('nome')
+        pg.codigo = nomero_do_convite
+        pg.id_presente = id
+        pg.save()
+
+        presente.quantidades = qt
+        presente.save()
+        return render(request, 'Presente_escolhido.html',{'id':id})
+    except:
+        return HttpResponse("<h1>Convinte nao Existe!</h1>")
+        
+    
 def Confimacao(request):
     if request.method == 'GET':
         return render(request, 'confirmacao.html')

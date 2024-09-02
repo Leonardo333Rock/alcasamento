@@ -6,10 +6,10 @@
     <form action="{% url 'confirmacao' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
-        <label for="formGroupExampleInput">Numero do Convite</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" name="convite" placeholder="Numero do Convite ">
-        <button type="submit" class="btn btn-success">Confirmar</button>
-    </div>
+            <label for="formGroupExampleInput">Numero do Convite</label>
+            <input type="text" class="form-control btn_confimar" id="formGroupExampleInput" name="convite" placeholder="Numero do Convite ">
+        <button type="submit" class="btn btn-success ">Confirmar</button>
+        </div>
     </form>
 </div>
 {% endblock %}
