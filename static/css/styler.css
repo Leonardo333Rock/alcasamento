@@ -53,3 +53,13 @@
 .btn_confimar{
     margin-bottom: 10px;
 }
+
+
+.presenteado{
+    font-size:larger;
+    color: #b02c0c;
+}
+
+.indisponivel{
+    color: red;
+}
