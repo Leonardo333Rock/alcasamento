@@ -21,6 +21,8 @@ urlpatterns = [
     path('confirmado',views.Confirmado,name='confirmado'),
     path('presentear/<int:id>',views.Presentear,name='presentear'),
     path('presente_escolhido',views.Presente_escolhido,name='presente_escolhido'),
+    path('agradecimeto',views.Agradecimeto,name='agradecimeto'),
+
 
 
 

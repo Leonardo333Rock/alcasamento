@@ -10,8 +10,6 @@ def Home(request):
 def Lista_de_presentes(request):
     pg = Presentes_ganho.objects.all()
     presente = Presente.objects.all()
-    for x in presente:
-        print(x.valor)
     return render(request,'lista_de_presentes.html',{'presente':presente, 'pg':pg})
 
 def Presentear(request,id):
@@ -37,10 +35,14 @@ def Presente_escolhido(request):
 
         presente.quantidades = qt
         presente.save()
-        return render(request, 'Presente_escolhido.html',{'id':id})
+        return redirect('agradecimeto')
     except:
         return HttpResponse("<h1>Convinte nao Existe!</h1>")
-        
+    
+
+def Agradecimeto(request):
+    return render(request, 'agradecimento.html')
+
     
 def Confimacao(request):
     if request.method == 'GET':
