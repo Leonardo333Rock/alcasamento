@@ -8,10 +8,11 @@ def Home(request):
     return render(request,'home.html')
 
 def Lista_de_presentes(request):
+    pg = Presentes_ganho.objects.all()
     presente = Presente.objects.all()
     for x in presente:
         print(x.valor)
-    return render(request,'lista_de_presentes.html',{'presente':presente})
+    return render(request,'lista_de_presentes.html',{'presente':presente, 'pg':pg})
 
 def Presentear(request,id):
     presente = Presente.objects.get(id=id)

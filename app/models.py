@@ -18,7 +18,7 @@ class Convidado(models.Model):
 
 
     class Meta:
-        ordering = ['acompanhantes']
+        ordering = ['nome']
 
 
 class Convidados_confirmados(models.Model):
