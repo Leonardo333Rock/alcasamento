@@ -45,20 +45,45 @@
               <a class="nav-link" href="/confirmacao">Confirme sua presença</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/noivos">Noivos</a>
+              <a class="nav-link" href="#">Noivos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cerimonia">Cerimônia</a>
+              <a class="nav-link" href="#">Cerimônia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/local">Local</a>
+              <a class="nav-link" href="#">Local</a>
             </li>
           </ul>
         </div>
       </nav>
     </div>
       {% block content %}
-<script src="{% static 'js/presentes.js' %}"></script>
+      <div class="container">
+        <div class="card text-center">
+          <div class="card-header">
+            
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Bem-vindos ao nosso site de casamento!</h5>
+            <p class="card-text">Estamos imensamente felizes em compartilhar este momento especial com vocês. Aqui, vocês encontrarão todos os detalhes sobre o nosso grande dia, desde o local e a data até o cronograma das celebrações.</p>
+            <p class="card-text">Cada um de vocês desempenha um papel importante em nossas vidas, e queremos que se sintam tão envolvidos e animados quanto nós estamos para o nosso casamento. Naveguem pelas seções do site para saber mais sobre a cerimônia, a festa, e também para conhecer um pouco mais sobre a nossa história.</p>
+    
+            <h6>Lista de Presentes:</h6>
+            <p class="card-text">Criamos uma lista de presentes que pode ser acessada clicando <a href="lista_de_presentes">aqui</a> ou em Lista de Presentes. Fiquem à vontade para escolher algo que nos ajude a iniciar nossa nova vida juntos.</p>
+            <h6>Confirmação de Presença:</h6>
+            <p class="card-text">Por favor, confirmem sua presença até 15 DE OUTUBRO clicando <a href="/confirmacao">aqui</a>. Isso nos ajudará a planejar tudo com carinho.</p>
+            
+            <p class="card-text">Agradecemos por fazerem parte da nossa celebração. Mal podemos esperar para compartilhar este dia incrível com todos vocês!</p>
+            
+            <p class="card-text">Com carinho,</p>
+            <p class="card-text" style="font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif; color: #b02c0c;">Aline e Leonardo</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          <div class="card-footer text-muted">
+            16 days Nov
+          </div>
+        </div>
+      </div>
     
       {% endblock%}
 </body>
