@@ -13,6 +13,7 @@ def Home(request):
         return render(request,'home.html')
 
 def Login(request):
+    try:    
         if request.method == "GET":
             return render(request,'login.html')
         else:
@@ -27,7 +28,9 @@ def Login(request):
                 return render(request,'home.html')
             else:
                 return HttpResponse('Convite incorreto')
-        
+    except:
+            return render(request,'home.html')
+
 @login_required(login_url='login')
 def Lista_de_presentes(request):
     pg = Presentes_ganho.objects.all()
