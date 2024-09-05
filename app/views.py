@@ -26,7 +26,7 @@ def Login(request):
                 login(request, user)
                 return render(request,'home.html')
             else:
-                return HttpResponse('Erro')
+                return HttpResponse('Convite incorreto')
         
 @login_required(login_url='login')
 def Lista_de_presentes(request):

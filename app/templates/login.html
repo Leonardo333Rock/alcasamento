@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'home.html' %}
+
+{% block content %}
     <div class="container">
         <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
             <div class="form-group">
               <label for="exampleInputEmail1">Codigo do Convite</label>
-              <input type="text" class="form-control" name="cdv" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" class="form-control" autofocus name="cdv" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
     </div>
-</body>
-</html>
+{% endblock %}
