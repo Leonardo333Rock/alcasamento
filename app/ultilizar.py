@@ -69,7 +69,7 @@ def get_client_info(request):
 # Função para salvar os dados em um arquivo .txt
 def save_client_info_to_file(client_info):
     # Caminho para salvar o arquivo (ajuste conforme o necessário)
-    file_path = os.path.join('logs', 'acessos.txt')
+    file_path = os.path.join('dad', 'acessos.txt')
 
     # Garante que o diretório 'logs' exista
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
