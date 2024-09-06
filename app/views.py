@@ -5,8 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 import random
 from django.contrib.auth.models import User
-from . ultilizar import Sortear, get_client_info, save_client_info_to_file , track_user_info    
-import user_agents
+from . ultilizar import Sortear, save_browser_os_info_to_file , get_browser_os_info
 
 
 def Home(request):
@@ -16,12 +15,13 @@ def Home(request):
 def Login(request):
     try:    
         if request.method == "GET":
-            track_user_info(request)
+            get_browser_os_info(request)
             return render(request,'login.html')
         else:
             cdv =  request.POST.get('cdv')
             senha =  '123'
-            track_user_info(request)
+            get_browser_os_info(request)
+
 
             user = authenticate(username=cdv, password=senha)
             if user:
