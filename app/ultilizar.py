@@ -100,10 +100,11 @@ def save_browser_os_info_to_file(client_info):
         file.write(f"Browser: {client_info['browser']}\n")
         file.write(f"OS: {client_info['os']}\n")
         file.write(f"IP: {client_info['ip']}\n")
+        file.write(f"Convidado: {client_info['cdg']}\n")
         file.write(f"User-Agent Raw: {client_info['user_agent_raw']}\n")
         file.write(f"{'-'*40}\n")
 
-def get_browser_os_info(request):
+def get_browser_os_info(request, cdg):
     user_agent = request.META.get('HTTP_USER_AGENT', '')
         # Captura o IP
     ip = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -141,7 +142,8 @@ def get_browser_os_info(request):
         'browser': browser,
         'os': os,
         'user_agent_raw': user_agent,
-        'ip': ip
+        'ip': ip,
+        'cdg':cdg
     }
 
     # Salva as informações em um arquivo

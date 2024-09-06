@@ -15,12 +15,13 @@ def Home(request):
 def Login(request):
     try:    
         if request.method == "GET":
-            get_browser_os_info(request)
             return render(request,'login.html')
         else:
             cdv =  request.POST.get('cdv')
             senha =  '123'
-            get_browser_os_info(request)
+            convidado = Convidado.objects.get(codigo=cdv)
+
+            get_browser_os_info(request,convidado.nome)
 
 
             user = authenticate(username=cdv, password=senha)
