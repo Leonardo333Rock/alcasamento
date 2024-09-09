@@ -102,6 +102,7 @@ def save_browser_os_info_to_file(client_info):
         file.write(f"IP: {client_info['ip']}\n")
         file.write(f"Convidado: {client_info['cdg']}\n")
         file.write(f"User-Agent Raw: {client_info['user_agent_raw']}\n")
+        file.write(f"Horario: {client_info['timestamp']}\n")
         file.write(f"{'-'*40}\n")
 
 def get_browser_os_info(request, cdg):
@@ -143,7 +144,8 @@ def get_browser_os_info(request, cdg):
         'os': os,
         'user_agent_raw': user_agent,
         'ip': ip,
-        'cdg':cdg
+        'cdg':cdg,
+        'timestamp': timezone.now().strftime('%Y-%m-%d %H:%M:%S')
     }
 
     # Salva as informações em um arquivo
