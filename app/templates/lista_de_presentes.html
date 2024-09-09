@@ -14,7 +14,8 @@
           {% if x.quantidades > 0 and p.id_presente == x.id %}
               <p class="presenteado">Presenteado por: {{p.nome}}</p>
           {% elif x.quantidades == 0 and p.id_presente == x.id %}
-              <p class="presenteado">Presenteado por: {{p.nome}}</p>
+              <hr>
+              <p class="presenteado">Presenteado por:<br> {{p.nome}} ❤️</p>
           {% endif %}
         {% endfor %}
 
