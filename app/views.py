@@ -27,7 +27,7 @@ def Login(request):
             user = authenticate(username=cdv, password=senha)
             if user:
                 login(request, user)
-                return render(request,'lista_de_presentes.html')
+                return redirect('lista_de_presentes')
             else:
                 return HttpResponse('Convite incorreto')
     except:
