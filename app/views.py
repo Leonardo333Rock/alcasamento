@@ -54,17 +54,19 @@ def Presente_escolhido(request):
         id = request.POST.get('id')
         presente = Presente.objects.get(id=id)
         pg = Presentes_ganho()
-        qt = presente.quantidades - 1
+        if presente.quantidades > 0:
+            qt = presente.quantidades - 1
+            pg.nome_presente = request.POST.get('presente')
+            pg.nome = request.POST.get('nome')
+            pg.codigo = nomero_do_convite
+            pg.id_presente = id
+            pg.save()
 
-        pg.nome_presente = request.POST.get('presente')
-        pg.nome = request.POST.get('nome')
-        pg.codigo = nomero_do_convite
-        pg.id_presente = id
-        pg.save()
-
-        presente.quantidades = qt
-        presente.save()
-        return redirect('agradecimeto')
+            presente.quantidades = qt
+            presente.save()
+            return redirect('agradecimeto')
+        else:
+            return HttpResponse("<h1>Presente ja escolhido!</h1>")
     except:
         return HttpResponse("<h1>Convinte nao Existe!</h1>")
     
@@ -110,7 +112,8 @@ def Confirmado(request):
         convidado = Convidado.objects.get(codigo=convite)
         convidado.confirmaçao = 'fechado'
         convidado.save()
-        return HttpResponse(f'confirmado')
+        return render(request,'home.html')
+        
 
 @login_required(login_url='login')
 def Acompanhantes(request):

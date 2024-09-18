@@ -1,0 +1,3 @@
+p = document.getElementById('principal')
+
+alert("Olá "+ p.innerHTML +"! 😊Nesta etapa, pedimos que você preencha os campos com os NOMES dos seus acompanhantes, de acordo com a quantidade de acompanhantes que disponibilizamos para você. Assim, podemos organizar tudo direitinho para que seu grupo seja bem recebido no nosso casamento!Se tiver alguma dúvida, estamos à disposição para ajudar. Agradecemos desde já pela sua confirmação! 💍✨")
