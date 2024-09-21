@@ -59,3 +59,24 @@ Convidado: Antônio Raimundo
 User-Agent Raw: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
 Horario: 2024-09-09 20:41:45
 ----------------------------------------
+Browser: Chrome
+OS: Windows
+IP: 127.0.0.1
+Convidado: A&L
+User-Agent Raw: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+Horario: 2024-09-20 12:21:59
+----------------------------------------
+Browser: Chrome
+OS: Windows
+IP: 127.0.0.1
+Convidado: A&L
+User-Agent Raw: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+Horario: 2024-09-20 12:22:49
+----------------------------------------
+Browser: Safari
+OS: Mac OS
+IP: 127.0.0.1
+Convidado: A&L
+User-Agent Raw: Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1
+Horario: 2024-09-21 11:48:18
+----------------------------------------

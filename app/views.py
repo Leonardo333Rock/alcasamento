@@ -125,10 +125,10 @@ def Noivos(request):
 
 
 def Cerimonia(request):
-    return HttpResponse('cerimonia')
+    return render(request,'cerimonia.html')
 
 def Local(request):
-    return HttpResponse('local')
+    return render(request,'local.html')
 
 
 
