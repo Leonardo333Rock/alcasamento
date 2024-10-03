@@ -235,3 +235,5 @@ def Pagina_de_cadastro(request):
         return render(request,'pg_de_casatro.html')
 
 
+def Fotos(request):
+    return render(request,'fotos.html')

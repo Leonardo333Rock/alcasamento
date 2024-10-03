@@ -23,8 +23,8 @@ urlpatterns = [
     path('presente_escolhido',views.Presente_escolhido,name='presente_escolhido'),
     path('agradecimeto',views.Agradecimeto,name='agradecimeto'),
     path('pagina_de_cadastro',views.Pagina_de_cadastro,name='pagina_de_cadastro'),
-    path('login',views.Login,name='login')
-
+    path('login',views.Login,name='login'),
+    path('fotos',views.Fotos,name='fotos')
 
 
 

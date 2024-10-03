@@ -1,5 +1,12 @@
 .topo{
-    background-color: #b02c0c ;
+    /* background-color: #b02c0c ; */
+    background-image: url('../drive-download-20241003T192218Z-001/DSC_7340.jpg');
+
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en la pantalla */
+
+    
     height:300px;
     border-radius: 0px 0px 5px 5px;
 }
@@ -13,6 +20,12 @@
     font-size: large;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
+}
+
+.al{
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .link_color{
