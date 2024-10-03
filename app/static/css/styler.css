@@ -1,6 +1,6 @@
 .topo{
     /* background-color: #b02c0c ; */
-    background-image: url('../../static/drive-download-20241003T192218Z-001/DSC_7340.jpg');
+    background-image: url('../drive-download-20241003T192218Z-001/DSC_7340.jpg');
 
     background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -11,7 +11,7 @@
     border-radius: 0px 0px 5px 5px;
 }
 
-.flex_lista{
+.flex_lista{ 
     display:flex;
     align-items:center;
     justify-content: center;
