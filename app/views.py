@@ -237,3 +237,15 @@ def Pagina_de_cadastro(request):
 
 def Fotos(request):
     return render(request,'fotos.html')
+
+def Lista_de_confirmados(request):
+    conv = []
+    conf =  Convidados_confirmados.objects.all()
+
+    for x in conf:
+        arr = x.db_convidados.split("-")
+        for y in arr:
+            if y != "" or y != "":
+                conv.append(y)
+    total = len(conv)        
+    return render(request,'lista_de_confirmados.html',{'conv':conv,'total':total})

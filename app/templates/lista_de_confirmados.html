@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item active">Cras justo odio</li>
+        {% for conv in conv %}
+        <li class="list-group-item">{{conv}}</li>
+        {% endfor %}
+        <li class="list-group-item active">Total de convidados: {{total}}</li>
+    </ul>
+</div>
+{% endblock %}

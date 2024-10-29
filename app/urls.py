@@ -24,7 +24,9 @@ urlpatterns = [
     path('agradecimeto',views.Agradecimeto,name='agradecimeto'),
     path('pagina_de_cadastro',views.Pagina_de_cadastro,name='pagina_de_cadastro'),
     path('login',views.Login,name='login'),
-    path('fotos',views.Fotos,name='fotos')
+    path('fotos',views.Fotos,name='fotos'),
+    path('lista_de_confirmados',views.Lista_de_confirmados,name='lista_de_confirmados')
+
 
 
 
