@@ -115,3 +115,10 @@ Convidado: A&L
 User-Agent Raw: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
 Horario: 2024-10-29 22:29:29
 ----------------------------------------
+Browser: Chrome
+OS: Windows
+IP: 127.0.0.1
+Convidado: A&L
+User-Agent Raw: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
+Horario: 2024-10-30 00:05:06
+----------------------------------------

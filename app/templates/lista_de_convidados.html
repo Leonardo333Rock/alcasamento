@@ -17,13 +17,24 @@
         </thead>
         <tbody>
         {% for x in convidado %}
+        {% if x.confirmaçao == 'aberto' %}
           <tr>
             <th scope="row">{{x.id}}</th>
-            <td>{{x.nome}}</td>
+            <td style="color:red;">{{x.nome}}</td>
             <td>{{x.acompanhantes}}</td>
             <td>{{x.codigo}}</td>
             <td><a href="editar/{{x.id}}" class="btn btn-success">Editar</a></td>
           </tr>
+          {%else%}
+          <tr>
+            <th scope="row">{{x.id}}</th>
+            <td style="color:green;">{{x.nome}}</td>
+            <td>{{x.acompanhantes}}</td>
+            <td>{{x.codigo}}</td>
+            <td><a href="editar/{{x.id}}" class="btn btn-success">Editar</a></td>
+          </tr>
+
+          {% endif %}
           {% endfor %}
           <tr>
             <th scope="row">Total</th>
