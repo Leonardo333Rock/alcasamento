@@ -5,9 +5,33 @@
     <ul class="list-group">
         <li class="list-group-item active">Lista de Convidados</li>
         {% for conv in conv %}
-        <li class="list-group-item">{{conv}}</li>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              {{conv}}
+            </label>
+          </div>
         {% endfor %}
-        <li class="list-group-item active">Total de convidados: {{total}}</li>
+          <hr>
+        <h3>Crianças</h3>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Arthur
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Adrian
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Joao Lucas
+            </label>
+          </div>
     </ul>
 </div>
 {% endblock %}
